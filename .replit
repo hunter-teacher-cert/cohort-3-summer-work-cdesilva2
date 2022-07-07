@@ -1,2 +1,2 @@
 language = "bash"
-run = ""
+run = "cd programming/5; javac Fib.java; java Fib"
