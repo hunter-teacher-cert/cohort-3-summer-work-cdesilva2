@@ -6,27 +6,57 @@ import java.util.*;
  * Driver class for Time class  by Team LucidThinkeren
  * First Last
  * collaborators: De Silva, Christopher, ELizabeth Rechtin, Ed Hawkins, Thea Williams
- */
+ */ 
 
-/**
-   INSTRUCTIONS:
-   This file contains the Driver starter code for our Time class.
-   
-   Add code in main to test all your methods
-   
-   Place this file in a folder named programming/5/Driver.java
-*/
+public class Driver 
+{
 
+    public static void main(String[] args) 
+    {
 
-public class Driver {
+        //declare a var of appropriate type to assign an instance of Time to
+        Time startTime = new Time(18, 50, 12);
+        Time runningTime = new Time(2, 16, 11);
+        Time time1 = new Time(18, 50, 12);
+        Time time2 = new Time(20, 12, 11);
 
-    public static void main(String[] args) {
+        //Check toString() in class Time
+        System.out.println(startTime.toString());
 
-	//declare a var of appropriate type to assign an instance of Time to
-	Time t;
+        System.out.println();
 
-	//assign var the address of a newly-apportioned Time object
-	t = new Time();
-    }//end main()
+        //Check 
+        time1.set(10, 20, 30);
+        System.out.println(time1.toString());
+        
+        System.out.println();
 
-}//end class
+        //Check add() in class Time
+        System.out.println("Starting Time: " + startTime.toString());
+        System.out.println("Running Time: " + runningTime.toString());
+        startTime.add(runningTime);
+        System.out.println("Ending Time: " + startTime.toString());
+    
+
+        System.out.println();
+
+        //Check equal() in class Time
+        System.out.println(startTime.equals(runningTime));
+        System.out.println(startTime.equals(startTime));
+
+        System.out.println();
+
+        //Check convertTime() in class Time;
+        //System.out.println(runningTime.convertTime(runningTime));
+
+        //System.out.println();
+
+        //Check compareTo() in class Time
+        System.out.println(time1.compareTo(runningTime));
+        System.out.println(time1.compareTo(time2));
+        System.out.println(time1.compareTo(time1));
+        
+
+    }
+
+}
