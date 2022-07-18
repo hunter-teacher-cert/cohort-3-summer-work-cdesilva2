@@ -1,6 +1,12 @@
 import java.io.*;
 import java.util.*;
 
+/* Collaborators (room 14):
+* Shana Elizabeth Henry, Christoper de Silva, Ashley Ufret, Kate Maschmeyer
+*
+*/
+
+
 /**
 For all attempted methods, make sensible decisions for error and
 edge cases (such as indexing out of bounds).
@@ -14,15 +20,15 @@ toString() Done
 
 Intermediate (at least add, size + one of the other two)
 ------------
-size()
-add(int index,String value)
-indexOf(String value);
-toArray()
+size() Done
+add(int index,String value) Done
+indexOf(String value); Done
+toArray() Done
 
 
 Challenge
 --------
-remove(int index);
+remove(int index); Done
 */
 
 public class LinkedList{
@@ -51,8 +57,13 @@ public class LinkedList{
   */
   public String get(int index){
     Node walker = head;
-    String temp ="Invalid Index";
+    String temp = "Invalid Index";
     int count = 0;
+    
+    if(index < 0 ) { // badness
+      return temp;
+    }
+    
     while (walker != null && count <= index){
       if (count == index) {
         temp = walker.getData();
@@ -79,8 +90,13 @@ public class LinkedList{
 
   
   public int size(){
-    
-    return 0;
+    int count = 0;
+    Node walker = head;
+    while (walker != null){
+      count++;
+      walker = walker.getNext();
+    }
+    return count;
   }
 
 
@@ -94,13 +110,43 @@ public class LinkedList{
   The new node should be added at the location specified by the index.
 
   For example, given the list:
-  "a" -> "b" -> "c" -> "d"
+        z
+    "a" -> "b" -> "c" -> "d"
 
   add(1,"z") results in:
   "a"-> "z" -> "b" -> "c" -> "d"
 
+  EXAMPLE:
+  add(2, "q"):
+
+  work:
+            q
+  "a"-> "z" -> "b" -> "c" -> "d"
+
+
+
   */
   public void add(int index, String value){
+    if(index == 0 ) {
+      this.add(value);
+    } else if(index < 0 || index > this.size()) {
+      System.out.println("Invalid index.  Nothing added");
+    } else {
+       int count = 0;
+        Node walker = head;
+        Node temp = new Node(value);
+    
+        while (walker != null && count <= (index - 1)){
+          if(count == (index - 1) ) {
+            temp.setNext(walker.getNext()); // z's next is b
+            walker.setNext(temp); // a's next is z
+          } 
+          walker = walker.getNext();
+          count++; 
+        }
+    }
+    
+   
 
   }
 
@@ -116,7 +162,18 @@ public class LinkedList{
 
   */
   public int indexOf(String value){
-    return 0;
+    Node walker = head;
+    int count = 0;
+    while (walker.getData() != value){
+      count++;
+      walker = walker.getNext();
+      if (walker.getNext() == null){
+        System.out.println(value +" is not in LinkedList");
+        return -1;
+      }
+      
+    }
+    return count;
   }
 
 
@@ -129,7 +186,15 @@ public class LinkedList{
 
   */
   public String[] toArray(){
-    return null;
+    String[] arr = new String[size()];
+    Node walker = head;
+    
+    for (int i=0; i<arr.length; i++)
+    {
+    arr[i] = walker.getData();
+    walker = walker.getNext();
+    }
+    return arr;
   }
 
 
@@ -146,5 +211,21 @@ public class LinkedList{
   "a"->"b"->"d"->"e"
   */
   public void remove(int index){
+    if(index == 0 ) {    
+      head = head.getNext(); // head will point to next one
+    } else if(index < 0 || index > this.size()) {
+      System.out.println("Invalid index.  Nothing to remove");
+    } else {
+       int count = 0;
+        Node walker = head;
+    
+        while (walker != null && count <= (index-1)){
+          if(count == (index-1) ) {
+            walker.setNext(walker.getNext().getNext()); 
+          } 
+          walker = walker.getNext();
+          count++; 
+        }
+    }
   }
 }
