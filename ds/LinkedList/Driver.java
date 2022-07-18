@@ -31,6 +31,10 @@ public class Driver{
     }
     System.out.println("Remove " + l.get(0) + " from list");
     l.remove(0); 
+    System.out.println("Remove " + l.get(2) + " from list");
+    l.remove(2); 
+    System.out.println("Remove " + l.get(1) + " from list");
+    l.remove(1); 
     System.out.println(l);
 
   }
