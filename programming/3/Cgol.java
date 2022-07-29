@@ -3,11 +3,11 @@ import java.util.*;
 
 /**
  * Conway's Game of Life by Team AreWeSentientYet?
- * Wayne Tobias
- * collaborators: Moo Joon (Michael) Park, Christopher De Silva, Maxwell Yearwood
+ * Maxwell Yearwood
+ * collaborators: Moo Joon (Michael) Park, Christopher De Silva, Wayne Tobias
  * Master coding by Maxwell
- * Assisted by Ashfak!!
- * Slacker - Christopher
+* Assisted by Ashfak!!
+* Slacker - Christopher
  */
 
 /**
@@ -150,9 +150,9 @@ return nextGen;
 
 
     //breathe life into some cells:
-    setCell(board, 1, 2, 'X');
-    setCell(board, 2, 2, 'X');
-    setCell(board, 3, 2, 'X');
+    setCell(board, 0, 0, 'X');
+    setCell(board, 0, 1, 'X');
+    setCell(board, 1, 0, 'X');
     System.out.println();
      printBoard( board );
 
@@ -164,8 +164,7 @@ return nextGen;
   /**  // TASK:
     // Once your initial version is running,
     // try out different starting configurations of living cells...
-    // the series of commands below is for 3 iterations of the data above
-  */
+    // (Feel free to comment out the above three lines.)*/
     
     System.out.println("Gen X:");
     printBoard(board);
@@ -174,27 +173,9 @@ return nextGen;
     System.out.println("Gen X+1:");
     printBoard(board);
     System.out.println("--------------------------\n\n");
-    board = generateNextBoard(board);
-    System.out.println("Gen X+2:");
-    printBoard(board);
-    System.out.println("--------------------------\n\n");
 
-
-    //breathe life into some cells:
-    // we tried some more cells here!
-    //setCell(board, 1, 1, 'X');
-    //setCell(board, 2, 1, 'X');
-    //setCell(board, 3, 1, 'X');
-    //System.out.println();
-    // printBoard( board );
 
     
-    /**board = generateNextBoard(board);
-    print the new board
-    System.out.println("Gen X+2:");
-    printBoard(board);
-    System.out.println("--------------------------\n\n");
-    */
   }//end main()
 
 }//end class

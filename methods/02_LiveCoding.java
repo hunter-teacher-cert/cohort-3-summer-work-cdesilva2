@@ -2,6 +2,14 @@
 import java.io.*;
 import java.util.*;
 
+//Instructions: Based on your level of "expertise" decide which version or versions you can complete.
+For Low: you can create a for loop printing out Java is fun 5 times
+For Med: you can create a for loop where you can manual change in the size.
+For High: you can create a for loop where you ask for the user input.
+
+Scaffold:
+Www.geeksforgeek.com
+
 public class LiveCoding {
 
   public static void main(String[] args){
@@ -10,6 +18,8 @@ public class LiveCoding {
     // for(int counter = 0; counter < 5; counter++){ 
     //   System.out.println("Java is fun");
     // }
+
+   // Answer:
 
     // VERSION 2 :: replace the hard coded five with the numberOfTimes variable.
     int numberOfTimes = 5;
